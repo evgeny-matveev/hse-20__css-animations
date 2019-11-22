@@ -1,0 +1,42 @@
+body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.rect {
+  width: 150px;
+  height: 150px;
+  background-color: black;
+  animation: change-bg 10s ease-in-out infinite;
+}
+body .rect:nth-of-type(odd) {
+  animation:
+    change-bg 3s ease-in-out infinite,
+    change-shape 6s ease-in-out infinite;
+}
+
+@keyframes change-bg {
+  0% {
+    background-color: black;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: black;
+  }
+}
+@keyframes change-shape {
+  0% {
+    border-radius: 0;
+    transform: rotate(180deg);
+  }
+  50% {
+    border-radius: 100%;
+    transform: rotate(360deg);
+  }
+  100% {
+    border-radius: 0;
+  }
+}
